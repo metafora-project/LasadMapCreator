@@ -11,8 +11,8 @@ import java.util.Vector;
 public class MysqlInitConnector {
 
 	private static String url = "jdbc:mysql://localhost/metaforainit?useUnicode=true&characterEncoding=UTF-8";
-	private static String user = "meta";
-	private static String password = "didPfM";
+	private static String user = Passwords.initUser;
+	private static String password = Passwords.initPassword;
 
 	private static MysqlInitConnector instance = null;
 
@@ -144,8 +144,8 @@ public class MysqlInitConnector {
 			e.printStackTrace();
 		}
 
-		sql = "SELECT `key`, `value` FROM generalModul  WHERE modul LIKE '" + modul
-				+ "' OR modul IS NULL";
+		sql = "SELECT `key`, `value` FROM generalModul  WHERE modul LIKE '"
+				+ modul + "' OR modul IS NULL";
 
 		try {
 			stmt = connection.createStatement();
