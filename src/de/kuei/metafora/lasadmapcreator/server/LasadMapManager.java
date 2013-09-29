@@ -85,6 +85,9 @@ public class LasadMapManager {
 			String groupId, String challengeId, String challengeName,
 			String ptNodeId, String ptMap, String lasadMapname) {
 
+		System.err.println("LasadMapCreator: send create map command: "
+				+ lasadMapname);
+
 		// save data for update command
 		this.challengeId = challengeId;
 		this.challengeName = challengeName;
@@ -123,6 +126,8 @@ public class LasadMapManager {
 				if (StartupServlet.commandLasad != null)
 					StartupServlet.commandLasad.sendMessage(creator
 							.getDocument());
+				else
+					System.err.println("LasadMapCreator: Lasad command channel is null!");
 
 				// add nodeId
 				NodeManager.getInstance().addNodeId(ptNodeId);

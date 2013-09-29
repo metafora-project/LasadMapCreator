@@ -108,7 +108,7 @@ public class StartupServlet extends HttpServlet {
 				System.err.println("StartupServlet: command configured.");
 				commandPlanningTool = muc;
 			} else if (channeldesc.getConnectionName().equals(
-					"LasadMapCreatorLasadCommand")) {
+					"LasadMapCreatorLasad")) {
 				System.err
 						.println("StartupServlet: command for lasad connection configured.");
 				commandLasad = muc;
